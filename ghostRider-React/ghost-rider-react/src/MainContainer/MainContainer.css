@@ -1,0 +1,10 @@
+.mainContainer {
+  background-color: rgba(24,24,24,0.9);
+  padding-bottom: 120px;
+}
+
+
+.logo {
+  width: auto;
+  height: 250px;
+}

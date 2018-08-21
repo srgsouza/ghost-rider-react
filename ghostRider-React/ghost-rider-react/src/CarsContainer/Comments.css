@@ -1,0 +1,11 @@
+.specificComment {
+  border: 1px solid black;
+  box-shadow: 1px 1px 1px 1px gray;
+  margin: 5px;
+  border-radius: 25px;
+}
+
+.specificComment Button {
+  margin: 5px;
+
+}

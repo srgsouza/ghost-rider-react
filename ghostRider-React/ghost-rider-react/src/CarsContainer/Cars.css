@@ -1,0 +1,17 @@
+.specificCar {
+  background: white;
+  border: 1px solid black;
+  box-shadow: 1px 1px 1px 1px gray;
+  padding-top: 25px;
+  margin: 10px;
+  padding-bottom: 25px;
+  border-radius: 25px;
+}
+
+.specificCar Button {
+  margin: 5px;
+}
+
+.createCommentComp {
+  margin: 30px;
+}
