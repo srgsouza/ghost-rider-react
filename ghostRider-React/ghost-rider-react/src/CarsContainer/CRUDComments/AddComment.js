@@ -15,7 +15,9 @@ class CreateComment extends Component {
   }
 
   updateComment = (e) => {
+    let carId = this.props.carID;
     this.setState({ [e.currentTarget.name]: e.currentTarget.value });
+    this.setState({ car: carId });
   }
 
   render() {
@@ -25,9 +27,6 @@ class CreateComment extends Component {
           <form>
             <textarea className="comment-box" type="textarea" name="comment" onChange={this.updateComment} placeholder='add comment/review' /><br /><br />
           </form>
-          <div className="check-box">
-            <input type="checkbox" name="car" value={this.props.carID} onChange={this.updateComment} /> &nbsp; Check box to submit a comment.<br />
-          </div>
           <Button type='Submit'>Comment</Button>
           <Button type='reset'>Reset</Button>
         </form>
