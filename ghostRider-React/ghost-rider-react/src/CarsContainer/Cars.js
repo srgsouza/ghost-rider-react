@@ -13,8 +13,6 @@ const Cars = (props) => {
 
     return (
       <Col md='12'>
-
-
         <div key={car.id} className='specificCar'>
           <span>{car.make}</span><br />
           <span>{car.model}</span><br />
@@ -26,9 +24,6 @@ const Cars = (props) => {
             <CreateComment carID={'http://127.0.0.1:8000/api/cars/' + car.id} addComment={props.addComment} />
           </div>
         </div>
-
-
-
       </Col>
     )
   })

@@ -65,16 +65,13 @@ class CarsContainer extends Component {
 
   addCar = async (car, e) => {
     e.preventDefault();
-    console.log(car);
-    
+    console.log('### CAR ###', car);
+    const data = { ...car, csrfmiddlewaretoken: this.props.csrf_token }
     try {
       const createdCar = await fetch('http://127.0.0.1:8000/api/cars/', {
         method: 'POST',
-        body: JSON.stringify({
-          ...car,
-          csrfmiddlewaretoken: this.props.csrf_token
-        }),
-
+        body: JSON.stringify(data),
+        
         headers: {
           'Content-Type': 'application/json',
           'X-CSRFToken': this.props.csrf_token,
