@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Row, Col, Button } from 'reactstrap';
 import classes from './addCar.css';
+import axios from "axios";
 
 
 class CreateCar extends Component {
@@ -13,12 +14,26 @@ class CreateCar extends Component {
             year: '',
             img_url: '',
             description: '',
+            images: null,
         }
     }
     updateCar = (e) => {
 
         this.setState({ [e.currentTarget.name]: e.currentTarget.value });
 
+    }
+
+    fileSelectedHandler = (event) => {
+        this.setState({ images: event.target.files[0] })
+    }
+
+    fileUploadHandler = () => {
+        const fd = new FormData();
+        fd.append('image', this.state.images, this.state.images.name);
+        axios.post('http://127.0.0.1:8000/api/cars/', fd)
+            .then(res => {
+                console.log(res);
+            });
     }
 
     render() {
@@ -41,6 +56,10 @@ class CreateCar extends Component {
                         </div>
                         <div className="vehicle-input">
                             Vehicle Description: <input type="text" name="description" onChange={this.updateCar} placeholder='description' /><br /><br />
+                        </div>
+                        <div>
+                            <input type="file" onChange={this.fileSelectedHandler} /><br />
+                            <Button onClick={this.fileUploadHandler}>Upload</Button>
                         </div>
                         <Button type='Submit' onClick={this.props.toggle}>Submit</Button>
                     </form>
