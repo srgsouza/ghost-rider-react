@@ -37,7 +37,7 @@ class Login extends React.Component {
                 <Input type="password" name="password" id="examplePassword" onChange={this.props.handleChange} placeholder="Password" />
               </FormGroup>
               {' '}
-              <Button type="submit">Login</Button>
+              <Button type="submit" onClick={this.toggle}>Login</Button>
             </Form>
           </ModalBody>
         </Modal>

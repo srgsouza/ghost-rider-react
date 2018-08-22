@@ -13,9 +13,12 @@ const Cars = (props) => {
 
     return (
       <Col md='12'>
+
+
         <div key={car.id} className='specificCar'>
           <span>{car.make}</span><br />
           <span>{car.model}</span><br />
+          <p>{car.description}</p>
           <Button color='danger' onClick={props.deleteCar.bind(null, car.id)}>Delete</Button>
           <Button color='danger' onClick={props.showModal.bind(null, car.id)}>Edit</Button>
 
@@ -24,6 +27,9 @@ const Cars = (props) => {
             <CreateComment carID={'http://127.0.0.1:8000/api/cars/' + car.id} addComment={props.addComment} />
           </div>
         </div>
+
+
+
       </Col>
     )
   })

@@ -1,0 +1,32 @@
+.welcomePageModal {
+  background-color: rgba(220, 56, 50, 0.9);
+  color: white;
+  font-weight: 600;
+  width: auto;
+  height: 500px;
+  text-align: center;
+  box-shadow: 1px 1px 1px 1px gray;
+  border-radius: 15px;
+
+
+}
+
+.welcomePageModal h2 {
+  background-color: rgba(24,24,24,1.0);
+
+  padding: 40px;
+
+}
+
+
+
+.welcomePageModal p {
+  margin-top: 20px;
+}
+
+.f458 {
+  background-color: rgba(24,24,24,0.8);
+  width: auto;
+  padding: 15px;
+  height: 100px;
+}
