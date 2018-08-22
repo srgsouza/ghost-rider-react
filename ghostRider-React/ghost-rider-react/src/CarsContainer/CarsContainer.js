@@ -28,12 +28,19 @@ class CarsContainer extends Component {
         car: '',
       },
       modal: false,
+      modal1: false,
     }
     this.toggle = this.toggle.bind(this);
+    this.toggle1 = this.toggle1.bind(this);
   }
   toggle() {
     this.setState({
       modal: !this.state.modal
+    });
+  }
+  toggle1() {
+    this.setState({
+      modal1: !this.state.modal1
     });
   }
 
@@ -114,6 +121,7 @@ class CarsContainer extends Component {
 
   showModal = (id, e) => {
     // i comes before e, when called with bind
+    this.toggle1();
     const carToEdit = this.state.cars.find((car) => car.id === id)
     console.log(carToEdit, ' carToEdit')
     console.log(id);
@@ -156,6 +164,7 @@ class CarsContainer extends Component {
         car: editedCarArray,
         showEdit: false
       });
+      this.toggle1();
     } catch (err) {
       console.log(err);
     }
@@ -298,12 +307,20 @@ class CarsContainer extends Component {
             </ModalFooter>
           </Modal>
         </div>
-
-        <Cars cars={this.state.cars} deleteCar={this.deleteCar} showModal={this.showModal} comments={this.state.comments} addComment={this.addComment} deleteComment={this.deleteComment} showCommentModal={this.showCommentModal} />
-
+        <Cars cars={this.state.cars}
+          deleteCar={this.deleteCar}
+          showModal={this.showModal}
+          comments={this.state.comments}
+          addComment={this.addComment}
+          deleteComment={this.deleteComment}
+          showCommentModal={this.showCommentModal}
+          modal1={this.state.modal1}
+          toggle1={this.toggle1}
+          closeAndEdit={this.closeAndEdit}
+          handleFormChange={this.handleFormChange}
+          carToEdit={this.state.carToEdit}
+        />
         {this.state.showCommentEdit ? <EditComment closeAndEditComment={this.closeAndEditComment} handleCommentFormChange={this.handleCommentFormChange} commentToEdit={this.state.commentToEdit} /> : null}
-
-        {this.state.showEdit ? <EditCar closeAndEdit={this.closeAndEdit} handleFormChange={this.handleFormChange} carToEdit={this.state.carToEdit} /> : null}
       </div>
     )
   }

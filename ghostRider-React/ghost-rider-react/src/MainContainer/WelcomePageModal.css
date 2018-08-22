@@ -3,11 +3,10 @@
   color: white;
   font-weight: 600;
   width: auto;
-  height: 500px;
+  height: 600px;
   text-align: center;
   box-shadow: 1px 1px 1px 1px gray;
   border-radius: 15px;
-
 
 }
 
@@ -42,7 +41,7 @@
 .f458 {
   width: auto;
   padding: 15px;
-  height: 100px;
+  height: 200px;
 }
 
 .gRider {

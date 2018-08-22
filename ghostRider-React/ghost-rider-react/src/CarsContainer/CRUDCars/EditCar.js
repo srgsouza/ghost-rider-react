@@ -1,22 +1,31 @@
 import React from 'react';
+import { Container, Row, Col, Button } from 'reactstrap';
 
 
 const EditCar = (props) => {
 
     return (
-        <div>
-            <h4> Edit Car</h4>
-            <form onSubmit={props.closeAndEdit}>
-                <label>
-                    Edit Car:
-                    <input type="text" name="make" onChange={props.handleFormChange} value={props.carToEdit.make} placeholder="make" />
-                    <input type="text" name="model" onChange={props.handleFormChange} value={props.carToEdit.model} placeholder="model" />
-                    <input type="text" name="year" onChange={props.handleFormChange} value={props.carToEdit.year} placeholder="year"/>
-                    <input type="text" name="img_url" onChange={props.handleFormChange} value={props.carToEdit.img_url} placeholder="img_url" />
-                    <input type="text" name="description" onChange={props.handleFormChange} value={props.carToEdit.description} placeholder="description" />
-                </label>
-                <input type='Submit' value="Edit Car" />
-            </form>
+        <div className='addCarForm'>
+            <div className="add-car">
+                <form onSubmit={props.closeAndEdit} >
+                    <div className="vehicle-input">
+                        Vehicle Make: <input type="text" name="make" onChange={props.handleFormChange} placeholder="make" /><br />
+                    </div>
+                    <div className="vehicle-input">
+                        Vehicle Model:  <input type="text" name="model" onChange={props.handleFormChange} placeholder="model" /><br />
+                    </div>
+                    <div className="vehicle-input">
+                        Year of Vehicle: <input type="text" name="year" onChange={props.handleFormChange} placeholder="year" /><br />
+                    </div>
+                    <div className="vehicle-input">
+                        Vehicle Image URL: <input type="text" name="img_url" onChange={props.handleFormChange} placeholder="img_url" /><br />
+                    </div>
+                    <div className="vehicle-input">
+                        Vehicle Description: <input type="text" name="description" onChange={props.handleFormChange} placeholder="description" /><br /><br />
+                    </div>
+                    <Button type='Submit' onClick={props.toggle1}>Edit Car</Button>
+                </form>
+            </div>
         </div>
 
     )

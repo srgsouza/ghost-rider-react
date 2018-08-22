@@ -1,8 +1,10 @@
 import React from 'react';
-import { Container, Row, Col, Button } from 'reactstrap';
+import { Container, Row, Col, Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import classes from './Cars.css';
 import Comments from './Comments';
 import CreateComment from './CRUDComments/AddComment';
+import EditCar from './CRUDCars/EditCar';
+
 
 
 const Cars = (props) => {
@@ -36,11 +38,24 @@ const Cars = (props) => {
           <hr />
           <h4 className="update-delete">Update/Delete Entry<br />(Available for Poster ONLY)</h4>
           <Button color='danger' onClick={props.deleteCar.bind(null, car.id)}>Delete</Button>
-          <Button color='danger' onClick={props.showModal.bind(null, car.id)}>Edit</Button>
+
+          <div className="addCarBTN">
+            <Button color="danger" onClick={props.showModal.bind(null, car.id)}>Edit Car</Button>
+            <Modal isOpen={props.modal1} toggle1={props.toggle1}>
+              <ModalHeader className="modal-header" toggle1={props.toggle1}>Edit Your Car Below:</ModalHeader>
+              <ModalBody>
+
+                <EditCar closeAndEdit={props.closeAndEdit} handleFormChange={props.handleFormChange} carToEdit={props.carToEdit} />
+
+              </ModalBody>
+              <ModalFooter>
+                <Button color="secondary" onClick={props.toggle1}>Cancel</Button>
+              </ModalFooter>
+            </Modal>
+          </div>
+
+
         </div>
-
-
-
       </Col>
     )
   })
