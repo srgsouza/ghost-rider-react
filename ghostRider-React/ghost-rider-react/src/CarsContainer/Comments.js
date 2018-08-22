@@ -4,7 +4,7 @@ import classes from './Comments.css';
 
 const Comments = (props) => {
 
-  let apiCarID = 'http://127.0.0.1:8000/api/cars/' + props.carID;
+  let apiCarID = 'http://127.0.0.1:8000/users/api/cars/' + props.carID;
 
   const commentList = props.comments.map((comment, i) => {
     console.log(comment, ' comment id, this is why we needed the checkbox, will discuss')
