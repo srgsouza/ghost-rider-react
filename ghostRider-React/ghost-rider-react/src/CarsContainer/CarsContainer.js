@@ -187,7 +187,9 @@ class CarsContainer extends Component {
         method: 'POST',
         body: JSON.stringify(comment),
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'X-CSRFToken': this.props.csrf_token,
+          'Authorization': `Token ${this.props.auth_token}`
         }
       });
       const createdCommentJson = await createdComment.json();
@@ -203,7 +205,12 @@ class CarsContainer extends Component {
     console.log('deleteComment function is being called, this is the id: ', id);
     try {
       const deleteComment = await fetch('http://127.0.0.1:8000/api/comments/' + id, {
-        method: 'DELETE'
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRFToken': this.props.csrf_token,
+          'Authorization': `Token ${this.props.auth_token}`
+        }
       });
       console.log(deleteComment, 'this is delete car');
 
@@ -238,7 +245,9 @@ class CarsContainer extends Component {
         method: 'PUT',
         body: JSON.stringify(this.state.commentToEdit),
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'X-CSRFToken': this.props.csrf_token,
+          'Authorization': `Token ${this.props.auth_token}`
         }
       });
 
