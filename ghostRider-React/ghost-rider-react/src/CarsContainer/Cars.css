@@ -15,3 +15,76 @@
 .createCommentComp {
   margin: 30px;
 }
+
+.car-deets {
+  text-align: left;
+  margin-left: 20px;
+  max-width: 500px;
+  display: inline-block;
+}
+
+.car-make {
+  font-family: 'Anton', sans-serif;
+  text-transform: uppercase;
+  font-size: 40px;
+}
+
+.car-model {
+  font-family: 'Anton', sans-serif;
+  text-transform: uppercase;
+  font-size: 25px;
+}
+
+.car-year {
+  font-family: 'Anton', sans-serif;
+  font-size: 18px;
+  color: red;
+}
+
+.car-description {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.car-image {
+  max-height: 200px;
+}
+
+.car-image-div {
+  display: inline-flex;
+  margin-right: 20px;
+}
+
+.car-info-full {
+  background-color: rgba(109, 106, 106, 0.349);
+  border-radius: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: inline-block;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+.user-comments {
+  font-family: 'Anton', sans-serif;
+  text-transform: uppercase;
+  font-size: 25px;
+  color: black;
+}
+
+.update-delete {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: red;
+}

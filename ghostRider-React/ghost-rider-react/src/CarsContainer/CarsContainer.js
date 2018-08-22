@@ -71,7 +71,7 @@ class CarsContainer extends Component {
       const createdCar = await fetch('http://127.0.0.1:8000/api/cars/', {
         method: 'POST',
         body: JSON.stringify(data),
-        
+
         headers: {
           'Content-Type': 'application/json',
           'X-CSRFToken': this.props.csrf_token,
@@ -149,7 +149,7 @@ class CarsContainer extends Component {
           car.year = editResponseJson.year;
           car.img_url = editResponseJson.img_url;
           car.description = editResponseJson.description;
-        } 
+        }
         return car
       });
       this.setState({
@@ -285,9 +285,9 @@ class CarsContainer extends Component {
     return (
       <div>
         <div className="addCarBTN">
-          <Button color="primary" onClick={this.toggle}>Add a Car!</Button>
+          <Button color="primary" onClick={this.toggle}>ADD A CAR!</Button>
           <Modal isOpen={this.state.modal} toggle={this.toggle}>
-            <ModalHeader toggle={this.toggle}>Add Car!</ModalHeader>
+            <ModalHeader className="modal-header" toggle={this.toggle}>Add Your Car Below:</ModalHeader>
             <ModalBody>
 
               <CreateCar addCar={this.addCar} toggle={this.toggle} />
