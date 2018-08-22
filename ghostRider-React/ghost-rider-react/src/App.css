@@ -22,6 +22,12 @@
   font-size: large;
 }
 
+button {
+  font-family: 'Open Sans Condensed', sans-serif !important;
+  font-size: 18px !important;
+  text-transform: uppercase;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

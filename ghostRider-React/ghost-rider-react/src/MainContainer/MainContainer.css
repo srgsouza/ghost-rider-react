@@ -6,5 +6,17 @@
 
 .logo {
   width: auto;
-  height: 250px;
+  height: 200px;
+}
+
+.logo-small {
+  width: auto;
+  height: 40px;
+}
+
+.copyright {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 16px;
+  color: white;
+  text-transform: uppercase;
 }

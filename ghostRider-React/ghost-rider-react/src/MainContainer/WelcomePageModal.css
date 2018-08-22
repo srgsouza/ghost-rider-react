@@ -12,21 +12,39 @@
 }
 
 .welcomePageModal h2 {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
   background-color: rgba(24,24,24,1.0);
-
-  padding: 40px;
+  padding: 20px;
 
 }
 
+.welcomePageModal h4 {
+  font-family: 'Anton', sans-serif;
+  font-size: 35px;
+  text-transform: uppercase;
+}
 
+.welcomePageModal h6 {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 25px;
+}
 
 .welcomePageModal p {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 18px;
   margin-top: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .f458 {
-  background-color: rgba(24,24,24,0.8);
   width: auto;
   padding: 15px;
   height: 100px;
+}
+
+.gRider {
+  max-height: 100px;
 }

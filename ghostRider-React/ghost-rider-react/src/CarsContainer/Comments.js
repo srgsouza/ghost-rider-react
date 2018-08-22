@@ -14,8 +14,8 @@ const Comments = (props) => {
         <Col md='12'>
           <div key={comment.id} className='specificComment'>
             <span>{comment.comment}</span><br />
-            <Button onClick={props.deleteComment.bind(null, comment.id)}>Delete</Button>
-            <Button onClick={props.showCommentModal.bind(null, comment.id)}>Edit</Button>
+            <Button color='danger' onClick={props.deleteComment.bind(null, comment.id)}>Delete</Button>
+            <Button color='danger' onClick={props.showCommentModal.bind(null, comment.id)}>Edit</Button>
           </div>
         </Col>
 

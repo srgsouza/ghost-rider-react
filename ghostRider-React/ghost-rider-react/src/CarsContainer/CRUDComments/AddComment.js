@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Button } from 'reactstrap';
+import classes from './addComment.css';
+
 
 
 class CreateComment extends Component {
@@ -20,10 +22,14 @@ class CreateComment extends Component {
     return (
       <div>
         <form onSubmit={this.props.addComment.bind(this, this.state)}>
-          <input type="text" name="comment" onChange={this.updateComment} placeholder='add comment/review' />
-          <input type="checkbox" name="car" value={this.props.carID} onChange={this.updateComment} />
-          <Button color='danger' type='Submit'>Comment</Button>
-          <Button color='danger' type='reset'>Reset</Button>
+          <form>
+            <textarea className="comment-box" type="textarea" name="comment" onChange={this.updateComment} placeholder='add comment/review' /><br /><br />
+          </form>
+          <div className="check-box">
+            <input type="checkbox" name="car" value={this.props.carID} onChange={this.updateComment} /> &nbsp; Check box to submit a comment.<br />
+          </div>
+          <Button type='Submit'>Comment</Button>
+          <Button type='reset'>Reset</Button>
         </form>
       </div>
 

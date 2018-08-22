@@ -85,13 +85,15 @@ class MainContainer extends Component {
 
             </ModalBody>
             <ModalFooter>
-              <Button color="secondary" onClick={this.toggle}>Ghostrr</Button>
+              <Button color="secondary" onClick={this.toggle}>Ghostride the Whip</Button>
             </ModalFooter>
           </Modal>
         </div>
         <NavbarComponent username={this.state.username} password={this.state.password} handleChange={this.handleChange} handleSubmit={this.handleSubmit} />
         <img src={require('./Ghost-Rider-Final.png')} className="logo" />
-        <CarsContainer csrf_token={this.props.csrf_token} auth_token={this.state.auth_token} />
+        <CarsContainer csrf_token={this.props.csrf_token} auth_token={this.state.auth_token} /><br />
+        <small className="copyright">&copy; 2018 (g)HOST/RIDER<br /><img src={require('./Ghost-Rider-Final.png')} className="logo-small" />
+        </small>
       </div>
 
     )

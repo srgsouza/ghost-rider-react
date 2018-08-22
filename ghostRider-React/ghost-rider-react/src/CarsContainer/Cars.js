@@ -16,16 +16,27 @@ const Cars = (props) => {
 
 
         <div key={car.id} className='specificCar'>
-          <span>{car.make}</span><br />
-          <span>{car.model}</span><br />
-          <p>{car.description}</p>
-          <Button color='danger' onClick={props.deleteCar.bind(null, car.id)}>Delete</Button>
-          <Button color='danger' onClick={props.showModal.bind(null, car.id)}>Edit</Button>
-
+          <div className="car-info-full">
+            <div className="car-deets">
+              <span className="car-make">- {car.make} - </span><br />
+              <span className="car-model">{car.model}</span><br />
+              <span className="car-year">{car.year}</span><br />
+              <p className="car-description">{car.description}</p>
+            </div>
+            <div className="car-image-div">
+              <img className="car-image" src={car.img_url} />
+            </div>
+          </div>
+          <br /><br /> <br />
+          <h4 className="user-comments">User Comments on {car.make} - {car.model}:</h4><br />
           <Comments carID={car.id} comments={props.comments} deleteComment={props.deleteComment} showCommentModal={props.showCommentModal} />
           <div className='createCommentComp'>
             <CreateComment carID={'http://127.0.0.1:8000/api/cars/' + car.id} addComment={props.addComment} />
-          </div>
+          </div><br />
+          <hr />
+          <h4 className="update-delete">Update/Delete Entry<br />(Available for Poster ONLY)</h4>
+          <Button color='danger' onClick={props.deleteCar.bind(null, car.id)}>Delete</Button>
+          <Button color='danger' onClick={props.showModal.bind(null, car.id)}>Edit</Button>
         </div>
 
 
