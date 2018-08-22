@@ -45,6 +45,37 @@ class MainContainer extends Component {
 
   }
 
+  handleRegistration = async (e) => {
+    console.log(this.props.csrf_token, '### GOT IN handleregistration')
+    e.preventDefault();
+    const data = { ...this.state, csrfmiddlewaretoken: this.props.csrf_token };
+    console.log(data)
+    const registrationResponse = await fetch('http://localhost:8000/api/users/', {
+      credentials: 'include',
+      method: 'POST',
+      body: JSON.stringify(
+        data),
+      headers: {
+        'Content-Type': 'application/json',
+        'X-CSRFToken': this.props.csrf_token,
+        // // 'X-Frame - Options': 'SAMEORIGIN',
+        // 'Vary': 'Accept, Origin, Cookie',
+      }
+    });
+
+    const parsedResponse = await registrationResponse.json();
+    console.log('## Parsed RESPONSE', parsedResponse);
+    this.setState({ auth_token: parsedResponse.token })
+    console.log(parsedResponse.status, '### PARSED RESPONSE');
+
+    if (parsedResponse.status === 201) {
+      // switch our route.
+      // Programmatically switching to a new route.
+      this.props.history.push('/');
+    }
+
+  }
+
   handleSubmit = async (e) => {
     console.log(this.props.csrf_token)
     e.preventDefault();
@@ -89,7 +120,7 @@ class MainContainer extends Component {
             </ModalFooter>
           </Modal>
         </div>
-        <NavbarComponent username={this.state.username} password={this.state.password} handleChange={this.handleChange} handleSubmit={this.handleSubmit} />
+        <NavbarComponent username={this.state.username} password={this.state.password} handleChange={this.handleChange} handleSubmit={this.handleSubmit} handleRegistration={this.handleRegistration} />
         <img src={require('./Ghost-Rider-Final.png')} className="logo" />
         <CarsContainer csrf_token={this.props.csrf_token} auth_token={this.state.auth_token} /><br />
         <small className="copyright">&copy; 2018 (g)HOST/RIDER<br /><img src={require('./Ghost-Rider-Final.png')} className="logo-small" />

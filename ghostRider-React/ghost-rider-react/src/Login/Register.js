@@ -24,18 +24,18 @@ class Register extends React.Component {
           toggle={this.toggle} className={this.props.className}>
           <ModalHeader toggle={this.toggle}>Register</ModalHeader>
           <ModalBody>
-            <Form onSubmit={this.props.handleSubmit} inline>
+            <Form onSubmit={this.props.handleRegistration} inline>
               <FormGroup>
                 <Label for="exampleEmail" hidden>Email</Label>
-                <Input type="email" name="username" id="exampleEmail" onChange={this.props.handleChange} placeholder="Email (username)" />
+                <Input type="text" name="username" id="exampleEmail" onChange={this.props.handleChange} placeholder="input a username" />
               </FormGroup>
               {' '}
               <FormGroup>
                 <Label for="examplePassword" hidden>Password</Label>
-                <Input type="password" name="password" id="examplePassword" onChange={this.props.handleChange} placeholder="Password" />
+                <Input type="password" name="password" id="examplePassword" onChange={this.props.handleChange} placeholder="input a password" />
               </FormGroup>
               {' '}
-              <Button onClick={this.toggle}>Register</Button>
+              <Button type="Submit" onClick={this.toggle}>Register</Button>
             </Form>
           </ModalBody>
         </Modal>
