@@ -34,14 +34,14 @@ const Cars = (props) => {
 
 
           <Comments carID={car.id}
-                    comments={props.comments}
-                    deleteComment={props.deleteComment}
-                    showCommentModal={props.showCommentModal}
-                    modal2={props.state.modal2}
-                    toggle2={props.toggle2}
-                    closeAndEditComment={props.closeAndEditComment}
-                    handleCommentFormChange={props.handleCommentFormChange}
-                    commentToEdit={props.state.commentToEdit} />
+            comments={props.comments}
+            deleteComment={props.deleteComment}
+            showCommentModal={props.showCommentModal}
+            modal2={props.modal2}
+            toggle2={props.toggle2}
+            closeAndEditComment={props.closeAndEditComment}
+            handleCommentFormChange={props.handleCommentFormChange}
+            commentToEdit={props.commentToEdit} />
 
 
           <div className='createCommentComp'>

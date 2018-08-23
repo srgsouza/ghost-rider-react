@@ -20,15 +20,22 @@ const Comments = (props) => {
 
 
             <div className="addCarBTN">
-              <Button color="danger" onClick={props.showCommentModal.bind(null, comment.id)}>Edit Car</Button>
-              <Modal isOpen={props.modal2} toggle1={props.toggle1}>
-                <ModalHeader className="modal-header" toggle1={props.toggle2}>Edit Your Car Below:</ModalHeader>
+              <Button color="danger" onClick={props.showCommentModal.bind(null, comment.id)}>Edit Comment</Button>
+              <Modal isOpen={props.modal2} toggle2={props.toggle2}>
+                <ModalHeader className="modal-header" toggle2={props.toggle2}>Edit Your Comment Below:</ModalHeader>
                 <ModalBody>
 
-                <EditComment closeAndEditComment={props.closeAndEditComment}
-                             handleCommentFormChange={props.handleCommentFormChange}
-                             commentToEdit={props.state.commentToEdit}
-                />
+                  <EditComment closeAndEditComment={props.closeAndEditComment}
+                    handleCommentFormChange={props.handleCommentFormChange}
+                    commentToEdit={props.commentToEdit}
+                  />
+
+                </ModalBody>
+                <ModalFooter>
+                  <Button color="secondary" onClick={props.toggle2}>Cancel</Button>
+                </ModalFooter>
+              </Modal>
+            </div>
 
 
 

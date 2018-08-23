@@ -33,7 +33,7 @@ class CarsContainer extends Component {
     }
     this.toggle = this.toggle.bind(this);
     this.toggle1 = this.toggle1.bind(this);
-    this.toggle2 = this.toggle3.bind(this);
+    this.toggle2 = this.toggle2.bind(this);
   }
   toggle() {
     this.setState({
@@ -242,6 +242,7 @@ class CarsContainer extends Component {
 
   showCommentModal = (id, e) => {
     // i comes before e, when called with bind
+    this.toggle2();
     const commentToEdit = this.state.comments.find((comment) => comment.id === id)
     console.log(commentToEdit, ' commentToEdit')
     console.log(id);
@@ -280,6 +281,7 @@ class CarsContainer extends Component {
         comment: editedCommentArray,
         showCommentEdit: false
       });
+      this.toggle2();
     } catch (err) {
       console.log(err);
     }
