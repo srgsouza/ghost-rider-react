@@ -5,11 +5,10 @@ import { Button } from 'reactstrap';
 const EditComment = (props) => {
 
     return (
-        <div>
-            <h4> Edit Comment</h4>
+        <div className="add-car">
             <form onSubmit={props.closeAndEditComment}>
                 <label>
-                    Edit Comment:
+                    Comment: &nbsp;
                     <input type="text" name="comment" onChange={props.handleCommentFormChange} value={props.commentToEdit.comment} />
 
                 </label>
