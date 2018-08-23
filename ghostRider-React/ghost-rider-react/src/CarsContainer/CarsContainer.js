@@ -29,9 +29,11 @@ class CarsContainer extends Component {
       },
       modal: false,
       modal1: false,
+      modal2: false,
     }
     this.toggle = this.toggle.bind(this);
     this.toggle1 = this.toggle1.bind(this);
+    this.toggle2 = this.toggle3.bind(this);
   }
   toggle() {
     this.setState({
@@ -41,6 +43,11 @@ class CarsContainer extends Component {
   toggle1() {
     this.setState({
       modal1: !this.state.modal1
+    });
+  }
+  toggle2() {
+    this.setState({
+      modal2: !this.state.modal2
     });
   }
 
@@ -307,6 +314,7 @@ class CarsContainer extends Component {
             </ModalFooter>
           </Modal>
         </div>
+
         <Cars cars={this.state.cars}
           deleteCar={this.deleteCar}
           showModal={this.showModal}
@@ -319,8 +327,13 @@ class CarsContainer extends Component {
           closeAndEdit={this.closeAndEdit}
           handleFormChange={this.handleFormChange}
           carToEdit={this.state.carToEdit}
+          modal2={this.state.modal2}
+          toggle2={this.toggle2}
+          closeAndEditComment={this.closeAndEditComment}
+          handleCommentFormChange={this.handleCommentFormChange}
+          commentToEdit={this.state.commentToEdit}
         />
-        {this.state.showCommentEdit ? <EditComment closeAndEditComment={this.closeAndEditComment} handleCommentFormChange={this.handleCommentFormChange} commentToEdit={this.state.commentToEdit} /> : null}
+
       </div>
     )
   }

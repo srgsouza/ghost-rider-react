@@ -31,13 +31,28 @@ const Cars = (props) => {
           </div>
           <br /><br /> <br />
           <h4 className="user-comments">User Comments on {car.make} - {car.model}:</h4><br />
-          <Comments carID={car.id} comments={props.comments} deleteComment={props.deleteComment} showCommentModal={props.showCommentModal} />
+
+
+          <Comments carID={car.id}
+                    comments={props.comments}
+                    deleteComment={props.deleteComment}
+                    showCommentModal={props.showCommentModal}
+                    modal2={props.state.modal2}
+                    toggle2={props.toggle2}
+                    closeAndEditComment={props.closeAndEditComment}
+                    handleCommentFormChange={props.handleCommentFormChange}
+                    commentToEdit={props.state.commentToEdit} />
+
+
           <div className='createCommentComp'>
             <CreateComment carID={'http://127.0.0.1:8000/api/cars/' + car.id} addComment={props.addComment} />
           </div><br />
           <hr />
           <h4 className="update-delete">Update/Delete Entry<br />(Available for Poster ONLY)</h4>
           <Button color='danger' onClick={props.deleteCar.bind(null, car.id)}>Delete</Button>
+
+
+
 
           <div className="addCarBTN">
             <Button color="danger" onClick={props.showModal.bind(null, car.id)}>Edit Car</Button>
