@@ -14,7 +14,6 @@ class CreateCar extends Component {
             year: '',
             img_url: '',
             description: '',
-            images: null,
         }
     }
     updateCar = (e) => {
@@ -56,10 +55,6 @@ class CreateCar extends Component {
                         </div>
                         <div className="vehicle-input">
                             Vehicle Description: <input type="text" name="description" onChange={this.updateCar} placeholder='description' /><br /><br />
-                        </div>
-                        <div>
-                            <input type="file" onChange={this.fileSelectedHandler} /><br />
-                            <Button onClick={this.fileUploadHandler}>Upload</Button>
                         </div>
                         <Button type='Submit' onClick={this.props.toggle}>Submit</Button>
                     </form>

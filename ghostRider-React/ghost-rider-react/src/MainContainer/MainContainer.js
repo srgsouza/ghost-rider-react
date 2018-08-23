@@ -58,8 +58,6 @@ class MainContainer extends Component {
       headers: {
         'Content-Type': 'application/json',
         'X-CSRFToken': this.props.csrf_token,
-        // // 'X-Frame - Options': 'SAMEORIGIN',
-        // 'Vary': 'Accept, Origin, Cookie',
       }
     });
 
@@ -93,7 +91,7 @@ class MainContainer extends Component {
     });
 
     const parsedResponse = await loginResponse.json();
-    console.log(parsedResponse);
+    console.log("TOKEN :", parsedResponse.token);
     this.setState({ auth_token: parsedResponse.token })
 
     if (parsedResponse.data === 'login successful') {
